@@ -10,7 +10,7 @@
 
 - ethereum-bridge (v0.5.3)
 
-## How to run (in order)
+## How to
 
 ### Install Dependencies
 ```
