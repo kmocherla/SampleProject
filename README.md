@@ -1,29 +1,57 @@
-# truffle-init-webpack
-Example webpack project with Truffle. Includes contracts, migrations, tests, user interface and webpack build pipeline.
+## Project Requirements
 
-## Usage
+- node (v6.9.1)
 
-To initialize a project with this exapmple, run `truffle init webpack` inside an empty directory.
+- npm (v4.6.1)
 
-## Building and the frontend
+- truffle (v3.2.0)
 
-1. First run `truffle compile`, then run `truffle migrate` to deploy the contracts onto your network of choice (default "development").
-1. Then run `npm run dev` to build the app and serve it on http://localhost:8080
+- testrpc (v3.0.0)
 
-## Possible upgrades
+- ethereum-bridge (v0.5.3)
 
-* Use the webpack hotloader to sense when contracts or javascript have been recompiled and rebuild the application. Contributions welcome!
+## How to run (in order)
 
-## Common Errors
-
-* **Error: Can't resolve '../build/contracts/MetaCoin.json'**
-
-This means you haven't compiled or migrated your contracts yet. Run `truffle compile` and `truffle migrate` first.
-
-Full error:
+### Install Dependencies
+```
+npm install -g truffle@3.2.0
+```
 
 ```
-ERROR in ./app/main.js
-Module not found: Error: Can't resolve '../build/contracts/MetaCoin.json' in '/Users/tim/Documents/workspace/Consensys/test3/app'
- @ ./app/main.js 11:16-59
+npm install -g ethereumjs-testrpc
 ```
+
+```
+cd ~; git clone https://github.com/oraclize/ethereum-bridge
+cd ~/ethereum-bridge
+npm install
+```
+
+```
+cd ~; git clone https://github.com/kmocherla/SampleProject
+cd ~/SampleProject
+npm install
+```
+
+### Start TestRPC Server
+```
+testrpc -u 0 -u 1 -u 2 -u 3
+```
+
+### Start Ethereum Bridge for Oraclize API
+Open another terminal and execute the below
+```
+cd ~/ethereum-bridge
+node bridge -H localhost:8545 -a 1
+```
+
+### Build Project and Start Decentralized App (DApp)
+Open another terminal and execute the below
+```
+cd ~/SampleProject
+truffle compile
+truffle migrate
+npm run build
+truffle serve
+```
+View DApp at http://localhost:8080
