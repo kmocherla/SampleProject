@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SampleDapp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>SampleDapp</h1>
+  <h4>Main Page Prototype!</h4>
+  <a href="escrow.html">Escrow Payments Page</a><br><br>
+
+  <br><button id="registerButton" onclick="App.register()">Register</button>
+  <button id="personIdButton" onclick="App.getPersonId()">GetPersonId</button>
+
+  <br><br>Twitter Username
+  <br><input type="text" id="twitterUsername" value = "ServiceAd2020"></input>
+  <br>Tweet URI
+  <br><input type="text" id="verificationTweet" value = "https://twitter.com/ServiceAd2020/status/872554821177319428"></input>
+  <br><br><button id="linkTwitterButton" onclick="App.linkTwitter()">LinkTwitter</button>
+  <button id="verifyTweetButton" onclick="App.verifyTweet()">VerifyTweet</button>
+  <button id="computeTwitterScoreButton" onclick="App.computeTwitterScore()">ComputeScore</button>
+  <button id="getTwitterScoreButton" onclick="App.getTwitterScore()">GetScore</button>
+
+  <h6>tweet: <span class="black"><span id="getTweet"></h6>
+  <h6>twitterScore: <span class="black"><span id="getTwitterScore"></h6>
+
+  <br>
+  <span id="status"></span>
+  <br>
+
+</body>
+</html>
