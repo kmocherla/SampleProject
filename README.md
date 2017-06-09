@@ -13,20 +13,24 @@
 ## How To
 
 ### Install Dependencies
+Truffle Framework
 ```
 npm install -g truffle@3.2.0
 ```
 
+TestRPC
 ```
 npm install -g ethereumjs-testrpc
 ```
 
+Ethereum Bridge for Oraclize API
 ```
 cd ~; git clone https://github.com/oraclize/ethereum-bridge
 cd ~/ethereum-bridge
 npm install
 ```
 
+Prototype Demo
 ```
 cd ~; git clone https://github.com/kmocherla/SampleProject
 cd ~/SampleProject
